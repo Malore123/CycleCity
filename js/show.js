@@ -20,7 +20,7 @@ function makeListItemHTML (data, index)
   return li;        
 }
 
-function makeDetailsHTML (data) 
+function makeDetailsHTML(data) 
 {
   /*
     This function creates some nice HTML around data for the #details section

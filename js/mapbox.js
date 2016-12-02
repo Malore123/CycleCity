@@ -61,6 +61,3 @@ function addMarkers(dataList)
     marker.setPopup(popup)
   }
 }
-
-
-// TODO challenge: geolocate yourself and centre the map at your position
