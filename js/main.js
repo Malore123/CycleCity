@@ -16,9 +16,6 @@ var valux = $('.sb-search-input')
 
 var resultsList = []
 
-
-
-
 // tell the GO button to do something when we click it 
 //GoButton.click(function ()
 homeButtons.click(function (event)
@@ -32,7 +29,7 @@ homeButtons.click(function (event)
  console.log ("You picked " + chosenOption)
  
  // filter+sort people by user selection
-    var resultsList = filterAndSortList(shopsList, chosenOption);
+    resultsList = filterAndSortList(shopsList, chosenOption);
     console.log(resultsList);
 
     showList(resultsList, resultsOL);
@@ -44,29 +41,30 @@ homeButtons.click(function (event)
         var resultId = $(this).attr('id')
         // use the id to get the right data
         var resultData = resultsList[resultId]
-        console.log(resultData)
+        console.log("resultData", resultData)
         // call the function showDetails()
         showDetails(resultData, detailsInfo)
+                    
+        detailsSection.show()
+        resultsSection.hide()
     })
     
     // show the results
     HomeSection.hide()
     resultsSection.show()
 })
-    
-function showDetails (data, interfaceElement) 
-{
-    console.log(data)
-  var detailsHTML = makeDetailsHTML(data)
-  interfaceElement.html(detailsHTML)
-}
-
 
 // tell the Back button to do something whe we click it 
 ResultsBackButton.click(function ()
 {
  resultsSection.hide()
  HomeSection.show()
+})
+
+detailsBackButton.click(function ()
+{
+ resultsSection.show()
+ detailsSection.hide()
 })
  
 //button to swtich betwwen list and map
